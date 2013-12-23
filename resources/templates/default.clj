@@ -87,7 +87,8 @@
     {:id "footer"}
     [:a {:href "/rss-feed"} " RSS Feed"]
     [:p "&copy; 2013" 
-     [:a {:href "http://hannah.io"} " Hannah Atkinson"]]]]
+     [:a {:href "http://hannah.io"} " Hannah Atkinson"]]
+    [:p "Built with " [:a {:href "http://nakkaya.com/static.html"} "Static"]]]]
   ;;
   ;;
   (if (= (:type metadata) :post) 
