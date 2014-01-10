@@ -10,7 +10,10 @@
 	  :href "/images/favicon.ico" :type "image/x-icon"}]
   [:link {:rel "shortcut icon", 
 	  :href "/images/favicon.ico" :type "image/x-icon"}]
-  [:link {:rel "stylesheet", :type "text/css", :href "/default.css"}]
+  [:link {:rel "stylesheet", :type "text/css", :href "/bootstrap-notypography.css"}]
+  [:link {:rel "stylesheet", :type "text/css", :href "/narrow.css"}]
+  [:link {:rel "stylesheet", :type "text/css", :href "/typeplate.css"}]
+
   [:link
    {:rel "alternate", :type "application/rss+xml",
     :title (:site-title (static.config/config)), :href "/rss-feed"}]
@@ -24,36 +27,27 @@
   [:title (:title metadata)]]
  [:body
   [:div
-   {:id "wrap"}
+   {:class "container"}
    [:div
-    {:id "header"}
-    [:h1
-     [:a
-      {:href "http://hannah.io"}
-      "hannah.io"
-      ]]
-    [:div
-     {:class "pages"}
-     [:ul 
+    {:class "header"}
+    [:ul 
+      {:class "nav nav-pills pull-right"}
       [:li [:a {:href "/", :class "page"} "Home"]] 
       [:li [:a {:href "/about.html", :class "page"} "About"]] 
       [:li [:a {:href "https://github.com/hlatki", :class "page"} "GitHub"]] 
       [:li [:a {:href "https://twitter.com/hlatkin", :class "page"} "Twitter"]]]
-
-;;     [:form {:method "get" 
-;;	     :action "http://www.google.com/search" :id "searchform"}
-;;      [:div
-;;       [:input {:type "text" :name "q" :class "box" :id "s"}]
-;;       [:input {:type "hidden" :name "sitesearch"
-;;		:value "nakkaya.com"}]]]i
-     ]]
+    [:h1
+         [:a
+          {:href "http://hannah.io"}
+          "hannah!"
+          ]]]
    [:div
-    {:id "content"}
+    {:class "content"}
     [:div
-     {:id "post"}
+     {:class "post"}
      (if (or (= (:type metadata) :post)
 	     (= (:type metadata) :site)) 
-       [:h2 {:class "page-title"} (:title metadata)])
+       [:h3 {:class "page-title"} (:title metadata)])
 
      content
 
@@ -67,7 +61,7 @@
     (if (= (:type metadata) :post)
       [:div
        {:id "related"}
-       [:h3 {:class "random-posts"} "Random Posts"]
+       [:h4 {:class "random-posts"} "Random Posts"]
        [:ul
     	{:class "posts"}
 	(map 
@@ -84,7 +78,7 @@
      (if (= (:type metadata) :post) 
        "<div id=\"disqus_thread\"></div><script type=\"text/javascript\" src=\"http://disqus.com/forums/hannahio/embed.js\"></script><noscript><a href=\"http://disqus.com/forums/hannahio/?url=ref\">View the discussion thread.</a></noscript><a href=\"http://disqus.com\" class=\"dsq-brlink\">blog comments powered by <span class=\"logo-disqus\">Disqus</span></a>")]]
    [:div
-    {:id "footer"}
+    {:class "footer"}
     [:a {:href "/rss-feed"} " RSS Feed"]
     [:p "&copy; 2013" 
      [:a {:href "http://hannah.io"} " Hannah Atkinson"]]

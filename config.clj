@@ -1,4 +1,4 @@
-[:site-title "blog.hannah.io"
+[:site-title "hannah.io"
  :site-description "Notes on code and such"
  :site-url "http://blog.hannah.io"
  :author-name "Hannah Atkinson"
