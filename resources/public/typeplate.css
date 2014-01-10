@@ -21,6 +21,45 @@
  *
  */
 
+
+
+/**
+ *
+ * =======================================================================
+	 Unicode Ampersand
+ * =======================================================================
+ */
+
+@font-face {
+	font-family: "Ampersand";
+	src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+	unicode-range: U+0026;
+}
+
+@font-face {
+	font-family: "Ampersand";
+	src: local("Georgia");
+	unicode-range: U+270C;
+}
+
+
+/**
+ *
+ * Extend this class on any element of your
+ * choice for ampersands.
+ *
+ * For example:
+
+	<h6 class="ampersand">Dewey Cheat 'em & Howe</h6>
+
+ */
+.ampersand {
+	font-family: Ampersand, Verdana, sans-serif;
+}
+
+
+/**
+ *
  * =======================================================================
 	 Word Wrap
  * =======================================================================
@@ -215,16 +254,16 @@ h6,
 	 Paragraphs and Indentation
  * =======================================================================
  */
-
+/*
 p {
 	margin: auto auto 1.5em; /* bottom margin for paragraphs */
 }
 
 p + p {
-/* no indent	text-indent: 1.5em; *//* indent subsequent paragraphs */
+	text-indent: 1.5em; /* indent subsequent paragraphs */
 	margin-top: -1.5em; /* no top margin on subsequent paragraphs */
 }
-
+*/
 
 /**
  *
