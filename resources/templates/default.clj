@@ -61,10 +61,12 @@
        "<div id=\"disqus_thread\"></div><script type=\"text/javascript\" src=\"http://disqus.com/forums/hannahio/embed.js\"></script><noscript><a href=\"http://disqus.com/forums/hannahio/?url=ref\">View the discussion thread.</a></noscript><a href=\"http://disqus.com\" class=\"dsq-brlink\">blog comments powered by <span class=\"logo-disqus\">Disqus</span></a>")]]
    [:div
     {:class "footer"}
-    [:a {:href "/rss-feed"} " RSS Feed"]
-    [:p "&copy; 2013" 
-     [:a {:href "http://hannah.io"} " Hannah Atkinson"]]
-    [:p "Built with " [:a {:href "http://nakkaya.com/static.html"} "Static"]]]]
+    [:ul {:class "nav-links"}
+     [:li "&copy; 2013"
+      [:a {:href "http://hannah.io"} " Hannah Atkinson"]]
+     [:li [:a {:href "/rss-feed"}  "RSS Feed"]]
+     [:li [:a {:href "/colophon.html"} "Colophon"]]]
+    ]]
   ;;
   ;;
   (if (= (:type metadata) :post) 
