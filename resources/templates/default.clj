@@ -10,10 +10,13 @@
           :href "/images/favicon.ico" :type "image/x-icon"}]
   [:link {:rel "shortcut icon", 
           :href "/images/favicon.ico" :type "image/x-icon"}]
+  "\n"
+  "<!-- build:css css/compiled.css -->"
   [:link {:rel "stylesheet", :type "text/css", :href "/bootstrap-notypography.css"}]
   [:link {:rel "stylesheet", :type "text/css", :href "/narrow.css"}]
   [:link {:rel "stylesheet", :type "text/css", :href "/typeplate.css"}]
-
+  "<!-- /build -->"
+  "\n"
   [:link
    {:rel "alternate", :type "application/rss+xml",
     :title (:site-title (static.config/config)), :href "/rss-feed"}]
