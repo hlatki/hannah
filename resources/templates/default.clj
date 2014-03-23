@@ -6,15 +6,19 @@
   [:meta {:name "description", :content (:description metadata)}]
   [:meta {:name "keywords", :content (:tags metadata)}]
   [:meta {:name "author", :content "Hannah Atkinson"}]
-  [:link {:rel "icon", 
-          :href "/images/favicon.ico" :type "image/x-icon"}]
-  [:link {:rel "shortcut icon", 
-          :href "/images/favicon.ico" :type "image/x-icon"}]
+  [:link {:rel "icon",
+          :href "images/favicon.ico" :type "image/x-icon"}]
+  [:link {:rel "shortcut icon",
+          :href "images/favicon.ico" :type "image/x-icon"}]
   "\n"
-  "<!-- build:css css/compiled.css -->"
+  "<!-- build:css /style/compiled.min.css -->"
   [:link {:rel "stylesheet", :type "text/css", :href "/bootstrap-notypography.css"}]
+
+  "<script src=\"https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js\"></script>"
+  
   [:link {:rel "stylesheet", :type "text/css", :href "/narrow.css"}]
   [:link {:rel "stylesheet", :type "text/css", :href "/typeplate.css"}]
+  ;;[:link {:rel "stylesheet", :type "text/css", :href "/style/style.min.css"}]
   "<!-- /build -->"
   "\n"
   [:link
@@ -22,9 +26,9 @@
     :title (:site-title (static.config/config)), :href "/rss-feed"}]
 
   (if (= (:type metadata) :post)
-    [:link {:rel "canonical" 
+    [:link {:rel "canonical"
             :href (str "http://hannah.io" (:url metadata))}])
-  
+
   [:title (:title metadata)]]
  [:body
   [:div
@@ -36,31 +40,31 @@
       {:href "http://hannah.io"}
       "hannah.io"
       ]]
-    [:ul 
+    [:ul
      {:class "nav-links"}
-     [:li [:a {:href "/", :class "page"} "Home"]] 
-     [:li [:a {:href "/about.html", :class "page"} "About"]] 
-     [:li [:a {:href "https://github.com/hlatki", :class "page"} "GitHub"]] 
+     [:li [:a {:href "/", :class "page"} "Home"]]
+     [:li [:a {:href "/about.html", :class "page"} "About"]]
+     [:li [:a {:href "https://github.com/hlatki", :class "page"} "GitHub"]]
      [:li [:a {:href "https://twitter.com/hlatkin", :class "page"} "Twitter"]]]]
    [:div
     {:class "content"}
     [:div
      {:class "post"}
      (if (or (= (:type metadata) :post)
-             (= (:type metadata) :site)) 
+             (= (:type metadata) :site))
        [:h2 {:class "page-title"} (:title metadata)])
 
      content
 
      (if (= (:type metadata) :post)
-       (reduce 
+       (reduce
          (fn[h v]
            (conj h [:a {:href (str "/tags/#" v)} (str v " ")]))
-         [:div {:class "post-tags"} "Tags: "] 
+         [:div {:class "post-tags"} "Tags: "]
          (.split (:tags metadata) " ")))]
 
-    [:div {:id "disqus"} 
-     (if (= (:type metadata) :post) 
+    [:div {:id "disqus"}
+     (if (= (:type metadata) :post)
        "<div id=\"disqus_thread\"></div><script type=\"text/javascript\" src=\"http://disqus.com/forums/hannahio/embed.js\"></script><noscript><a href=\"http://disqus.com/forums/hannahio/?url=ref\">View the discussion thread.</a></noscript><a href=\"http://disqus.com\" class=\"dsq-brlink\">blog comments powered by <span class=\"logo-disqus\">Disqus</span></a>")]]
    [:div
     {:class "footer"}
@@ -72,7 +76,7 @@
     ]]
   ;;
   ;;
-  (if (= (:type metadata) :post) 
+  (if (= (:type metadata) :post)
     "<script type=\"text/javascript\">
     //<![CDATA[
     (function() {
@@ -86,4 +90,5 @@
     document.write('<script charset=\"utf-8\" type=\"text/javascript\" src=\"http://disqus.com/forums/hannahio/get_num_replies.js' + query + '\"></' + 'script>');
     })();
     //]]>
-    </script>")]]
+    </script>")]
+]
